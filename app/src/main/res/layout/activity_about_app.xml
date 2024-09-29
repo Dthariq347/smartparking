@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6E8AD1"
+    tools:context=".Page.AboutApp">
+
+    <!-- Car Image -->
+    <ImageView
+        android:id="@+id/imageCar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Car image"
+        android:src="@drawable/imgaboutapp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintWidth_percent="0.7"
+    app:layout_constraintHeight_percent="0.35"/>
+
+    <!-- Card View for About App -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAboutApp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:elevation="8dp"
+        android:radius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/imageCar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title Text for About App -->
+            <TextView
+                android:id="@+id/aboutTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About App"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:paddingBottom="8dp"/>
+
+            <!-- About App Text -->
+            <TextView
+                android:id="@+id/aboutText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secure Parking operates and manages the parking facilities at various malls, shopping centers, and residential areas. Each facility contains many parking lots of different categories like VIP, Normal, Reserved Slots etc. The parking slots are having different tariffs for (per hour) usage."
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:lineSpacingExtra="4dp"
+                android:paddingBottom="16dp"/>
+
+            <!-- Button for Get Started -->
+            <Button
+                android:id="@+id/buttonGetStarted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Started"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#6E8AD1"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

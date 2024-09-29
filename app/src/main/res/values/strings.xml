@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">smartparking</string>
+    <string name="mapbox_access_token">sk.eyJ1IjoiZHRoYXJpcTM0NyIsImEiOiJjbTFuOTI2NHEwb2c2MnNxdjR1cXoxMzd0In0.zVjlSzU5GcYGo5wK7e9_kw</string>
+
+</resources>
