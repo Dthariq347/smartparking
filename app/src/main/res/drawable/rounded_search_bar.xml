@@ -10,6 +10,6 @@
 
     <!-- Garis luar (border) -->
     <stroke
-        android:width="2dp"
+        android:width="1dp"
         android:color="#B0BEC5" />
 </shape>

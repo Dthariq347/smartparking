@@ -20,13 +20,15 @@ class HomeActivity : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.recyclerViewParking)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+
+
         // Example data for parking spots
         val parkingSpots = listOf(
-            Parking("Binus Alam Sutera", "Motor: 362 | Mobil: 20", true),
-            Parking("Pacific Garden Alam Sutera", "Motor: 60 | Mobil: 80", true),
-            Parking("Mall Alam Sutera", "Motor: 45 | Mobil: 60", true),
-            Parking("Ruko Woodlake", "Motor: 30 | Mobil: 40", false),
-            Parking("Binus Kemanggisan", "Motor: 37 | Mobil: 20", false)
+            Parking("Binus Alam Sutera", "Motor: 362 | Mobil: 20", true, motorCount = 362),
+            Parking("Pacific Garden Alam Sutera", "Motor: 320 | Mobil: 80", true, motorCount = 60),
+            Parking("Mall Alam Sutera", "Motor: 45 | Mobil: 60", true, motorCount = 45),
+            Parking("Ruko Woodlake", "Motor: 30 | Mobil: 40", false, motorCount = 30),
+            Parking("Binus Kemanggisan", "Motor: 37 | Mobil: 20", false, motorCount = 37)
         )
 
         // Set the adapter for RecyclerView

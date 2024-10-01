@@ -1,53 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@drawable/rounded_box"
-    android:padding="8dp"
-    tools:context=".Page.ParkingAdapter">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    android:backgroundTint="#6E8AD1"> <!-- Background biru -->
 
-    <!-- Image Lokasi Parkir -->
-    <ImageView
-        android:id="@+id/parkingImage"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:padding="10dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/sampleparkir"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginEnd="12dp" />
-
-    <!-- Nama Lokasi -->
-    <TextView
-        android:id="@+id/parkingName"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Binus Alam Sutera"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@id/parkingImage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="4dp"/>
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-    <!-- Info Motor dan Mobil -->
-    <TextView
-        android:id="@+id/parkingInfo"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Motor: 362 | Mobil: 20"
-        android:textSize="14sp"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toEndOf="@id/parkingImage"
-        app:layout_constraintTop_toBottomOf="@id/parkingName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <!-- Gambar parkir -->
+        <ImageView
+            android:id="@+id/parkingImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/sampleparkir"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Kolom teks -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Nama tempat parkir -->
+            <TextView
+                android:id="@+id/parkingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Binus Alam Sutera"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <!-- Info motor -->
+            <TextView
+                android:id="@+id/parkingInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Motor : 362"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <!-- Opsi lainnya (menu titik tiga) -->
+        <ImageView
+            android:id="@+id/moreOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/titik3"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
