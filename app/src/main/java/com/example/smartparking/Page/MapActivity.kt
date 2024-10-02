@@ -55,7 +55,8 @@ class MapActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_notifications -> {
-                    // Tambahkan logika jika ada halaman notifikasi
+                    val intent = Intent(this, Notifications::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

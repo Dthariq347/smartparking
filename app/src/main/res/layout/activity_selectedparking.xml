@@ -12,7 +12,6 @@
         android:id="@+id/topContainer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
         android:background="#6E8AD1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,19 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Search Bar -->
-        <EditText
-            android:id="@+id/search"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/rounded_search_bar"
-            android:drawableStart="@drawable/ic_search"
-            android:hint="Where to park?"
-            android:padding="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/profilePicture" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -54,36 +41,60 @@
 
     <!-- Bottom Navigation Bar -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/linearLayoutSelected"
+        android:layout_width="411dp"
+        android:layout_height="73dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@id/topContainer">
 
-        <!-- Green Available -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="● Available"
-            android:textColor="#4CAF50" />
+        <!-- Image Lokasi Parkir -->
+        <ImageView
+            android:id="@+id/selectedparkingImage"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginEnd="12dp"
+            android:padding="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/sampleparkir"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Yellow Almost Full -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:text="● Almost Full"
-            android:textColor="#FFEB3B" />
+        <!-- Nama Lokasi -->
 
-        <!-- Red High Risk -->
         <TextView
+            android:id="@+id/selectedparkingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="● High Risk"
-            android:textColor="#F44336" />
+            android:layout_marginBottom="4dp"
+            android:text="Binus Alam Sutera"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/selectedparkingImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/selectedparkingInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Motor: 362 | Mobil: 20"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/selectedparkingImage"
+            app:layout_constraintTop_toBottomOf="@id/selectedparkingName" />
+
+        <!-- Info Motor dan Mobil -->
+
+
     </LinearLayout>
 
     <TextView
@@ -91,25 +102,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:text="Sering Anda Kunjungi"
+        android:text="Perkiraan Tempat Terdekat"
+        android:padding="10dp"
         android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topContainer" />
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewParking"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="5dp"
-        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/frequentVisitsTitle"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="@id/selectedRecyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutSelected"
         app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -122,5 +121,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selectedRecyclerView"
+        android:layout_width="409dp"
+        android:layout_height="514dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frequentVisitsTitle"
+        app:layout_constraintVertical_bias="0.0" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

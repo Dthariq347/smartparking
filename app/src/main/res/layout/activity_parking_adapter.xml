@@ -48,6 +48,15 @@
                 android:textColor="@android:color/holo_red_light"
                 android:textSize="16sp"/>
 
+            <!-- Info mobil -->
+            <TextView
+                android:id="@+id/mobilInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobil : 20"
+                android:textColor="@android:color/holo_green_light"
+                android:textSize="16sp"/>
+
         </LinearLayout>
 
         <!-- Opsi lainnya (menu titik tiga) -->
